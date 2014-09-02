@@ -1,0 +1,23 @@
+Mettre en rapport le code et le comportement
+	1. La première case (t[0])
+	2. p[0] aucune probabilité, il se déplace toujours quand on lui demande (p = [0.)
+	3. 4 possibilitées
+
+Expliquer le comportement observé
+	A la fin, il est complètement à gauche.
+
+Reconstituer le programme
+	deplacement à l'est : 
+	-res[i]= t[i]* proba de rester dans la meme case parce qu'on est resté dans la meme case 0
+	-t[i-1] proba d'avoir été dans la case d'avant * p[1] proba d'avoir avancé d'une case
+
+def deplacer_ouest(t): # une case vers la gauche <-
+   res = [0 for i in range(N)]
+   for i in range(N):
+     for j in range(0, min(N - i, K)):
+        res[i] += t[i + j] * p[j]
+   return res
+
+Pippo modifie le programme
+
+	
